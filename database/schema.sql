@@ -6,7 +6,7 @@ USE triaje_app;
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,
     usuario VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    clave VARCHAR(255) NOT NULL,
     nombre VARCHAR(100),
     rol ENUM('alumno','profesor') NOT NULL,
     fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP
@@ -55,8 +55,8 @@ CREATE TABLE triajes (
     categoria ENUM('Rojo','Naranja','Amarillo','Verde','Azul'),
     flujo ENUM('RCP','Nivel I','Nivel II','Traumatologia','Obstetrica','Pediatria','Psiquiatria'),
     
-    FOREIGN KEY (paciente_id) REFERENCES pacientes(id));
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    FOREIGN KEY (paciente_id) REFERENCES pacientes(id),
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id));
 
 
 -- TABLA ATENCION
