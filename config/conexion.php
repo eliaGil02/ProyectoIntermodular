@@ -1,7 +1,6 @@
 <?php
-
-
-function conexion() {
+function conexion()
+{
     try {
         $conn = new PDO("mysql:host=localhost;dbname=triaje_app", "root", "rootroot");
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -11,6 +10,5 @@ function conexion() {
         exit;
     }
 }
-
 
 ?>
